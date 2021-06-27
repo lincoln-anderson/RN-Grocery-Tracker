@@ -12,6 +12,10 @@ export default class MyApp extends Component<Props> {
         <Text style={styles.instructions}>
           i cant get over this
         </Text>
+        <Text style={styles.welcome}>
+          More text items
+        </Text>
+        
       </View>
     );
   }
@@ -25,12 +29,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#2A2734',
   },
   welcome: {
-    fontSize: 20,
+    fontSize: 50,
     textAlign: 'center',
     margin: 10,
     color: 'white'
   },
   instructions: {
+    fontSize: 30,
     textAlign: 'center',
     color: '#B0B0B0',
     marginBottom: 5,
