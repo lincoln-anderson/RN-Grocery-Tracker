@@ -1,22 +1,44 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import 'react-native-gesture-handler';
+import { createStackNavigator } from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.welcome}>
-        Grocery Tracker
-      </Text>
-      <Text style={styles.welcome}>
-        WE MOVE
-      </Text>
-      <Text style={styles.instructions}>
-        React Native
-      </Text>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ title: 'Grocery Tracker' }}
+        />
+        <Stack.Screen name="Groceries" component={ProfileScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
 
+const HomeScreen = ({ navigation }) => {
+  return (
+    <Button
+      title="Mark food as Eaten"
+      onPress={() =>
+        navigation.navigate('Groceries', { name: 'Jane' })
+      }
+    />
+  );
+};
+const ProfileScreen = ({ navigation, route }) => {
+  return <Text></Text>;
+};
 
-    </View>
+const MyTitle = () => {
+  return(
+    <Text style={styles.welcome}>Hello</Text>
   );
 }
 
@@ -31,7 +53,9 @@ const styles = StyleSheet.create({
     fontSize: 50,
     textAlign: 'center',
     margin: 10,
-    color: 'white'
+    color: 'white',
+    borderWidth: 3,
+    borderColor: '#B0B0B0'
   },
   instructions: {
     fontSize: 30,
