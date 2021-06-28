@@ -14,9 +14,17 @@ export default function App() {
       <Text style={styles.instructions}>
         React Native
       </Text>
+      <MyTitle></MyTitle>
 
 
     </View>
+
+  );
+}
+
+const MyTitle = () => {
+  return(
+    <Text style={styles.welcome}>Hello</Text>
   );
 }
 
@@ -31,7 +39,9 @@ const styles = StyleSheet.create({
     fontSize: 50,
     textAlign: 'center',
     margin: 10,
-    color: 'white'
+    color: 'white',
+    borderWidth: 3,
+    borderColor: '#B0B0B0'
   },
   instructions: {
     fontSize: 30,
