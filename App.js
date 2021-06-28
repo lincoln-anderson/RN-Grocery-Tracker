@@ -14,9 +14,9 @@ export default function App() {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{ title: 'Welcome' }}
+          options={{ title: 'Grocery Tracker' }}
         />
-        <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="Groceries" component={ProfileScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -25,15 +25,15 @@ export default function App() {
 const HomeScreen = ({ navigation }) => {
   return (
     <Button
-      title="Go to Jane's profile"
+      title="Mark food as Eaten"
       onPress={() =>
-        navigation.navigate('Profile', { name: 'Jane' })
+        navigation.navigate('Groceries', { name: 'Jane' })
       }
     />
   );
 };
 const ProfileScreen = ({ navigation, route }) => {
-  return <Text>This is {route.params.name}'s profile</Text>;
+  return <Text></Text>;
 };
 
 const MyTitle = () => {
