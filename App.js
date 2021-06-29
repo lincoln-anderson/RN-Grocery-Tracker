@@ -21,6 +21,13 @@ export default function App() {
           <Text font='title2'>more text</Text>
           <Spacer/>
         </HStack>
+        <Spacer/>
+        <VStack
+        aligment='leading'
+        cornerRadius={20}
+        >
+          <Text font='title'>MORE</Text>
+        </VStack>
       </VStack>
       <StatusBar style="auto" />
     </View>
