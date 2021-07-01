@@ -8,7 +8,7 @@ import { Text, View } from '../components/Themed';
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
-      <GroceryItem name="Lincoln" date={ Date().getMonth() }/>
+      <GroceryItem name="Lincoln" date={ Date() }/>
       <Text style={styles.title}>lets see what groceries are about to go bad</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
     </View>
