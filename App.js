@@ -18,7 +18,7 @@ const MyStack = () => {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{ title: 'Groceries To Expire Soon' }}
+          options={{ title: 'Grocery Tracker' }}
         />
         <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="Test" component={TestScreen} />
