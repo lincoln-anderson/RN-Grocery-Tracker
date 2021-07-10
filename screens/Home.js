@@ -9,7 +9,7 @@ const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Button
-        title="Go to Jane's profile"
+        title="Go to lincolns's profile"
         onPress={() =>
           navigation.navigate('Profile', { name: 'Jane' })
         }
