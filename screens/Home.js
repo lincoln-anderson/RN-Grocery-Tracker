@@ -15,7 +15,6 @@ const HomeScreen = ({ navigation }) => {
           navigation.navigate('Profile', { name: 'Jane' })
         }
       />
-      <GroceryItem />
       <View style={styles.spacer} />
       <Button
         title="Go to Test"
