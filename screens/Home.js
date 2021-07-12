@@ -4,7 +4,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import styles from '../../RN-Grocery-Tracker/styles/styles'
-import GroceryItem from '../../RN-Grocery-Tracker/views/GroceryItem'
+import GroceryItemView from '../../RN-Grocery-Tracker/views/GroceryItemView'
 
 const HomeScreen = ({ navigation }) => {
   return (
@@ -15,6 +15,7 @@ const HomeScreen = ({ navigation }) => {
           navigation.navigate('Profile', { name: 'Jane' })
         }
       />
+      <GroceryItemView name="chicken"/>
       <View style={styles.spacer} />
       <Button
         title="Go to Test"
