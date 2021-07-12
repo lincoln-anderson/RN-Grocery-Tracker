@@ -1,12 +1,55 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button } from 'react-native';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import {
+    FlatList,
+    StyleSheet,
+    SafeAreaView,
+    View,
+    Text,
+    ActivityIndicator,
+    TouchableHighlight,
+    AsyncStorage
+} from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import styles from '../../RN-Grocery-Tracker/styles/styles'
 import GroceryItemView from '../../RN-Grocery-Tracker/views/GroceryItemView'
 
-const HomeScreen = ({ navigation }) => {
+import axios from 'axios';
+
+export default function HomeScreen(props) {
+    const dispatch = useDispatch();
+    const { navigation } = props;
+
+    const [isFetching, setIsFetching] = useState(false);
+
+
+    const dataReducer = useSelector((state) => state.dataReducer);
+    const { quotes } = dataReducer;
+
+    useEffect(() => getData(), []);
+
+    const getData = () => {
+        setIsFetching(true);
+
+        //OPTION 1 - LOCAL DATA
+        AsyncStorage.getItem('quotes', (err, quotes) => {
+            if (err) alert(err.message);
+            else if (quotes !== null) dispatch(addQuotes(JSON.parse(quotes)));
+
+            setIsFetching(false)
+        });
+
+    };
+
+    const renderItem = ({item, index}) => {
+        return (
+            <ListItem item={item} index={index} navigation={navigation} onDelete={onDelete} onEdit={onEdit}/>
+        )
+    };
+
+
   return (
     <View style={styles.container}>
       <GroceryItemView name='steak' expDate={ getCurrentDate() } purchasedDate={ getPurchasedDate() } />
@@ -48,5 +91,3 @@ const getCurrentDate=()=>{
 
 
 }
-
-export default HomeScreen;
