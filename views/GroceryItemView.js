@@ -1,16 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import React, {useEffect, useState} from 'react';
-import {
-    FlatList,
-    StyleSheet,
-    SafeAreaView,
-    View,
-    Text,
-    ActivityIndicator,
-    TouchableHighlight,
-    AsyncStorage
-} from 'react-native';
-import { useDispatch, useSelector } from 'react-redux';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import styles from '../../RN-Grocery-Tracker/styles/styles'
